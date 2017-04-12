@@ -1,5 +1,1 @@
-SELECT
-  name,
-  password
-FROM users
-WHERE user_id = :user_id
+INSERT INTO users(name, password, is_deleted) VALUES (:name, :password, :isDeleted)

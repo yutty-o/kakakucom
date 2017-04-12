@@ -1,4 +1,4 @@
-package kakakucom.controller.account;
+package kakakucom.app.account;
 
 import kakakucom.model.User;
 import kakakucom.service.AccountService;
@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+/**
+ * 会員登録コントローラ
+ * Created by yutty on 2017/04/12
+ */
 @Controller
 @RequestMapping("account")
 public class AccountController {
@@ -22,7 +26,7 @@ public class AccountController {
         return new AccountForm();
     }
 
-    @RequestMapping(value = "create", method = RequestMethod.GET)
+    @RequestMapping(value = "create")
     String createForm() {
         return "account/createForm";
     }
@@ -32,19 +36,19 @@ public class AccountController {
         if (result.hasErrors()) {
             return "account/createForm";
         }
-        User user = new User(
-            0,
-            form.getName(),
-            form.getPassword(),
-            false
-        );
-        accountService.register();
+
+        User user = User.builder()
+            .name(form.getName())
+            .email(form.getEmail())
+            .isDeleted(false)
+            .build();
+        accountService.create(user, form.getPassword());
         attributes.addFlashAttribute(user);
-        return "redirect:/account/create?finish";
+        return "redirect:/account/create?complete";
     }
 
-    @RequestMapping(value = "create", params = "finish", method = RequestMethod.GET)
+    @RequestMapping(value = "create", params = "complete", method = RequestMethod.GET)
     String createFinish() {
-        return "account/createFinish";
+        return "account/createComplete";
     }
 }
