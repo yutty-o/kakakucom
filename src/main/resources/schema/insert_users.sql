@@ -1,0 +1,1 @@
+INSERT INTO users (name, password, is_deleted) VALUES ('yukiogawa', 'password', false);

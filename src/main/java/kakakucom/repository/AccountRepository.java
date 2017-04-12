@@ -1,10 +1,8 @@
-package kakakucom.domain.repository;
+package kakakucom.repository;
 
-import kakakucom.domain.model.User;
+import kakakucom.model.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 /**
  * 会員登録レポジトリ
@@ -13,7 +11,9 @@ import java.util.List;
 @Mapper
 public interface AccountRepository {
 
-    List<User> findOne(@Param("email") final String email);
+//    List<User> findOne(@Param("email") final String email);
 
-    User register(@Param("user") final User user);
+    int create(
+        @Param("user") final User user
+    );
 }
