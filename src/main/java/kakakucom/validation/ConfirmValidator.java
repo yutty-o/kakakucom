@@ -12,7 +12,7 @@ import java.util.Objects;
  * パスワード入力確認バリデーター
  * Created by ogawayuuki on 2017/04/12.
  */
-public class ConfirmValidation implements ConstraintValidator<Confirm, Object> {
+public class ConfirmValidator implements ConstraintValidator<Confirm, Object> {
     private String field;
     private String confirmField;
     private String message;

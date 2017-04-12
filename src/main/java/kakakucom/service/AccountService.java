@@ -1,7 +1,7 @@
-package kakakucom.domain.service;
+package kakakucom.service;
 
-import kakakucom.domain.model.User;
-import kakakucom.domain.repository.AccountRepository;
+import kakakucom.model.User;
+import kakakucom.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -16,14 +16,16 @@ import org.springframework.transaction.annotation.Transactional;
 public class AccountService {
 
     @Autowired
-    AccountRepository accountRepository;
+    private AccountRepository accountRepository;
     @Autowired
-    PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
-    public User registerUser() {
-        User user = accountRepository.create(new User(3, "taro", "password", false));
-        System.out.println(user + "is created!");
-        return user;
+    public int create(User user, String rawPassword) {
+        String encodedPassword = passwordEncoder.encode(rawPassword);
+        user.setPassword(encodedPassword);
+
+        int insertCount = accountRepository.create(user);
+        return insertCount;
     }
 
 }
