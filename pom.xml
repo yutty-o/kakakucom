@@ -27,6 +27,9 @@
 
         <!-- lombok -->
         <lombok.project>1.16.14</lombok.project>
+
+        <!-- spring loaded -->
+        <springloaded.version>1.2.7.RELEASE</springloaded.version>
 	</properties>
 
 	<dependencies>
@@ -95,6 +98,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<dependencies>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>${springloaded.version}</version>
+                    </dependency>
+                </dependencies>
 			</plugin>
 		</plugins>
 	</build>
