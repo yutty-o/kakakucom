@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout = "http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>価格.com</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/foundation/normalize.css}" />
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1 class="site-title">価格.com</h1>
+        <div class="header__inner">
+            <div class="header__logo">
+                <a th:href="@{/}"></a>
+            </div>
+            <div class="header__nav">
+                <ul class="header__nav__group">
+                    <li class="header__nav__item"><a href="">ログイン</a></li>
+                    <li class="header__nav__item"><a href="">新規会員登録</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- wrapper-->
+    <div class="wrapper" layout:fragment="wrapper">
+        価格.com
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer__logo"></div>
+        <div class="footer__nav">
+            <ul class="header__nav__group">
+                <li class="header__nav__item"><a href="">運営会社</a></li>
+                <li class="header__nav__item"><a href="">利用規約</a></li>
+                <li class="header__nav__item"><a href="">サイトマップ</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
