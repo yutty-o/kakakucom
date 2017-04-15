@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout = "http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/base">
 <head>
-    <meta charset="UTF-8"/>
-    <title>ユーザー登録</title>
+    <title>ユーザー登録 | 価格.com</title>
 </head>
 <body>
     <h1>ユーザー登録完了</h1>
-<div>
-    <p>
-        ようこそ <span th:text="${user.name}">ほげ</span>さん。<br/>
-        <a th:href="@{/loginForm}" href="../login/loginForm.html">こちら</a>からログインしてください。
-    </p>
-</div>
+    <div layout:fragment="wrapper">
+        <p>
+            ようこそ <span th:text="${user.name}">ほげ</span>さん。<br/>
+            <a th:href="@{/loginForm}" href="../login/loginForm.html">こちら</a>からログインしてください。
+        </p>
+    </div>
 </body>
 </html>
