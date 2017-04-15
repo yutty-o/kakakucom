@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout = "http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/base">
 <head>
-    <meta charset="UTF-8"/>
-    <title>ユーザー登録</title>
+    <title>アカウント登録 | 価格.com</title>
 </head>
 <body>
-    <h1>ユーザー登録</h1>
-    <div>
+    <div layout:fragment="wrapper">
         <form th:action="@{/account/create}" action="createComplete.html" th:object="${accountForm}" method="post">
             <div th:classappend="${#fields.hasErrors('name')}? 'has-error'">
                 <label for="name">名前</label>
