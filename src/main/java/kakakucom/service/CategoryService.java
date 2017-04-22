@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
  */
 @Service
 @Transactional
-public class IndexService {
+public class CategoryService {
 
     @Autowired
     CategoryRepository categoryRepository;
