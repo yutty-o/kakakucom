@@ -7,7 +7,7 @@
     <title>アカウント登録 | 価格.com</title>
 </head>
 <body>
-    <div layout:fragment="wrapper">
+    <div layout:fragment="content">
         <form th:action="@{/account/create}" action="createComplete.html" th:object="${accountForm}" method="post">
             <div th:classappend="${#fields.hasErrors('name')}? 'has-error'">
                 <label for="name">名前</label>
