@@ -13,7 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  * 会員登録コントローラ
- * Created by yutty on 2017/04/12
+ * Created by ogawayuuki on 2017/04/12
  */
 @Controller
 @RequestMapping("account")
