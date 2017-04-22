@@ -11,22 +11,20 @@ DROP TABLE IF EXISTS `kakakucom`.`large_category`;
 
 
 CREATE TABLE IF NOT EXISTS `kakakucom`.`large_category` (
-  `large_category_id` INT NOT NULL AUTO_INCREMENT,
-  `title` VARCHAR(255) NOT NULL,
+  `large_category_cd` VARCHAR(32) NOT NULL,
   `name` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`large_category_id`))
+  PRIMARY KEY (`large_category_cd`))
   ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `kakakucom`.`small_category` (
-  `small_category_id` INT NOT NULL AUTO_INCREMENT,
-  `large_category_id` INT NOT NULL,
-  `title` VARCHAR(255) NOT NULL,
+  `small_category_cd` VARCHAR(32) NOT NULL,
+  `large_category_cd` VARCHAR(32) NOT NULL,
   `name` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`small_category_id`),
-  INDEX `large_category_id_idx` (`large_category_id` ASC),
-  CONSTRAINT `large_category_id`
-  FOREIGN KEY (`large_category_id`)
-  REFERENCES `kakakucom`.`large_category` (`large_category_id`)
+  PRIMARY KEY (`small_category_cd`),
+  INDEX `large_category_cd_idx` (`large_category_cd` ASC),
+  CONSTRAINT `large_category_cd`
+  FOREIGN KEY (`large_category_cd`)
+  REFERENCES `kakakucom`.`large_category` (`large_category_cd`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
   ENGINE = InnoDB;
@@ -57,20 +55,20 @@ CREATE TABLE IF NOT EXISTS `kakakucom`.`items` (
   `item_id` INT(6) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `image_path` VARCHAR(255) NULL,
-  `large_category_id` INT NOT NULL,
-  `small_category_id` INT NOT NULL,
+  `large_category_cd` VARCHAR(32) NOT NULL,
+  `small_category_cd` VARCHAR(32) NOT NULL,
   `description` TEXT NOT NULL,
   PRIMARY KEY (`item_id`),
-  INDEX `large_category_id_idx` (`large_category_id` ASC),
-  INDEX `small_category_id_idx` (`small_category_id` ASC),
-  CONSTRAINT `item_large_category_id`
-  FOREIGN KEY (`large_category_id`)
-  REFERENCES `kakakucom`.`large_category` (`large_category_id`)
+  INDEX `item_large_category_cd_idx` (`large_category_cd` ASC),
+  INDEX `item_small_category_cd_idx` (`small_category_cd` ASC),
+  CONSTRAINT `item_large_category_cd`
+  FOREIGN KEY (`large_category_cd`)
+  REFERENCES `kakakucom`.`large_category` (`large_category_cd`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `item_small_category_id`
-  FOREIGN KEY (`small_category_id`)
-  REFERENCES `kakakucom`.`small_category` (`small_category_id`)
+  CONSTRAINT `item_small_category_cd`
+  FOREIGN KEY (`small_category_cd`)
+  REFERENCES `kakakucom`.`small_category` (`small_category_cd`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
   ENGINE = InnoDB;
