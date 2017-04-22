@@ -5,10 +5,20 @@
       layout:decorator="layout/base">
 <head>
     <title>価格.com - 「買ってよかった」をすべてのひとに。</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" />
 </head>
 <body>
-    <div layout:fragment="wrapper">
-        トップページ
+    <div layout:fragment="content">
+        <div class="categories">
+            <div class="category" th:each="category: ${categories}">
+                <a href="#" class="category__anchor_wrapper">
+                   <p class="category__large" th:text="${category.largeCategory.name}">大カテゴリ名</p>
+                    <ul class="category__smalls">
+                        <li th:each="smallCategory: ${category.smallCategories}" th:text="${smallCategory.name}">小カテゴリ名</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
