@@ -1,1 +1,0 @@
-INSERT INTO users(name, password, is_deleted) VALUES (:name, :password, :isDeleted)
