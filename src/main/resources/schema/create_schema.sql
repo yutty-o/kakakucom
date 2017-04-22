@@ -13,6 +13,7 @@ DROP TABLE IF EXISTS `kakakucom`.`large_category`;
 CREATE TABLE IF NOT EXISTS `kakakucom`.`large_category` (
   `large_category_cd` VARCHAR(32) NOT NULL,
   `name` VARCHAR(255) NOT NULL,
+  `sort_no` INT NULL,
   PRIMARY KEY (`large_category_cd`))
   ENGINE = InnoDB;
 
@@ -20,6 +21,7 @@ CREATE TABLE IF NOT EXISTS `kakakucom`.`small_category` (
   `small_category_cd` VARCHAR(32) NOT NULL,
   `large_category_cd` VARCHAR(32) NOT NULL,
   `name` VARCHAR(255) NOT NULL,
+  `sort_no` INT NULL,
   PRIMARY KEY (`small_category_cd`),
   INDEX `large_category_cd_idx` (`large_category_cd` ASC),
   CONSTRAINT `large_category_cd`
@@ -170,5 +172,5 @@ CREATE TABLE IF NOT EXISTS `kakakucom`.`item_bookmark` (
   REFERENCES `kakakucom`.`items` (`item_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-  ENGINE = InnoDB
+  ENGINE = InnoDB;
 

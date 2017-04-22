@@ -1,10 +1,10 @@
 -- large_category
-INSERT INTO `kakakucom`.`large_category` (`large_category_cd`, `name`) VALUES ('pc', 'パソコン');
-INSERT INTO `kakakucom`.`large_category` (`large_category_cd`, `name`) VALUES ('kaden', '家電');
+INSERT INTO `kakakucom`.`large_category` (`large_category_cd`, `name`, `sort_no`) VALUES ('pc', 'パソコン', 1);
+INSERT INTO `kakakucom`.`large_category` (`large_category_cd`, `name`, `sort_no`) VALUES ('kaden', '家電', 2);
 
 -- small_category
-INSERT INTO `kakakucom`.`small_category` (`small_category_cd`, `large_category_cd`, `name`) VALUES ('note-pc', 'pc', 'ノートパソコン');
-INSERT INTO `kakakucom`.`small_category` (`small_category_cd`, `large_category_cd`, `name`) VALUES ('lcd-tv', 'pc', '薄型テレビ');
+INSERT INTO `kakakucom`.`small_category` (`small_category_cd`, `large_category_cd`, `name`, `sort_no`) VALUES ('note-pc', 'pc', 'ノートパソコン', 1);
+INSERT INTO `kakakucom`.`small_category` (`small_category_cd`, `large_category_cd`, `name`, `sort_no`) VALUES ('lcd-tv', 'pc', '薄型テレビ', 2);
 
 -- items
 INSERT INTO `kakakucom`.`items` (`name`, `image_path`, `large_category_cd`, `small_category_cd`, `description`) VALUES ('HP 15-ba000 価格.com限定 フルHD非光沢&クアッドコア搭載モデル', '',  'pc', 'note-pc', '液晶サイズ：15.6インチ CPU：AMD Quad-Core E2-7110/1.8GHz/4コア CPUスコア：2255 ストレージ容量：HDD：500GB メモリ容量：4GB OS：Windows 10 Home 64bit');

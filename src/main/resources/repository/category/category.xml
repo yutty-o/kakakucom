@@ -9,7 +9,9 @@
         large_category_cd,
         name
       FROM
-        large_category;
+        large_category
+      ORDER BY
+        sort_no ASC;
     </select>
 
     <select id="findSmallCategories" resultType="kakakucom.model.SmallCategory">
@@ -18,7 +20,9 @@
         large_category_cd,
         name
       FROM
-        small_category;
+        small_category
+      ORDER BY
+        sort_no ASC;
     </select>
 
 </mapper>
