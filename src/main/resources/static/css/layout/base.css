@@ -1,0 +1,137 @@
+/**
+ * base.css
+ * ページ共通のレイアウトスタイル
+ */
+
+/* foundation
+========================================================================== */
+
+ul { margin: 0; padding: 0; }
+li { list-style: none; }
+p { margin: 0; }
+a { color: #4c4c4c; text-decoration: none; }
+a:hover { color: #33aeff; }
+
+
+/* body
+========================================================================== */
+
+body {
+    background-color: #eeeeee;
+    color: #4c4c4c;
+    font-family: YakuHanJP, YuGothic, sans-serif;
+    margin: 0;
+    min-width: 1120px;
+}
+
+#site-title {
+    font: 0/0 a;
+    display: none;
+}
+
+/* Header
+========================================================================== */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+    width: 100%;
+    min-width: 1120px;
+}
+
+.header__inner {
+    height: 90px;
+    margin: 0 auto;
+    max-width: 1360px;
+    position: relative;
+}
+
+.header__logo {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    margin-top: -20px;
+    height: 40px;
+}
+
+.header__logo a {
+    background-image: url("../../img/logo.png");
+    background-size: 150px 40px;
+    width: 150px;
+    height: 40px;
+    display: block;
+}
+
+.header__nav {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    height: 20px;
+    margin-top: -10px;
+}
+
+.header__nav__group {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.header__nav__item {
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 32px;
+}
+
+.header__nav__item:first-child {
+    margin-left: 0;
+}
+
+/* Content
+========================================================================== */
+
+#content {
+    margin: 0 auto;
+    max-width: 1280px;
+    min-width: 1120px;
+}
+
+
+/* Footer
+========================================================================== */
+
+footer {
+    background-color: #ffffff;
+    width: 100%;
+    min-width: 1120px;
+    position: relative;
+}
+
+.footer_inner {
+    height: 90px;
+    margin: 0 auto;
+    max-width: 1360px;
+    position: relative;
+}
+
+.footer__nav {
+    position: absolute;
+    top: 50%;
+    height: 20px;
+    margin-top: -10px;
+    width: 100%;
+}
+
+.footer__nav__group {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.footer__nav__item {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.footer__nav__item:first-child {
+    margin-left: 0;
+}

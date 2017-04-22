@@ -5,11 +5,13 @@
 <head>
     <title>価格.com</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/foundation/normalize.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/layout/base.css}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/yakuhanjp/1.3.1/css/yakuhanjp_s.min.css" />
 </head>
 <body>
+<div id="wrapper">
     <!-- header -->
     <header>
-        <h1 class="site-title">価格.com</h1>
         <div class="header__inner">
             <div class="header__logo">
                 <a th:href="@{/}"></a>
@@ -23,21 +25,23 @@
         </div>
     </header>
 
-    <!-- wrapper-->
-    <div class="wrapper" layout:fragment="wrapper">
-        価格.com
+    <!-- content-->
+    <div id="content" layout:fragment="content">
+
     </div>
 
     <!-- footer -->
     <footer>
-        <div class="footer__logo"></div>
-        <div class="footer__nav">
-            <ul class="header__nav__group">
-                <li class="header__nav__item"><a href="">運営会社</a></li>
-                <li class="header__nav__item"><a href="">利用規約</a></li>
-                <li class="header__nav__item"><a href="">サイトマップ</a></li>
-            </ul>
+        <div class="footer_inner">
+            <div class="footer__nav">
+                <ul class="footer__nav__group">
+                    <li class="footer__nav__item"><a href="">運営会社</a></li>
+                    <li class="footer__nav__item"><a href="">利用規約</a></li>
+                    <li class="footer__nav__item"><a href="">サイトマップ</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
+</div>
 </body>
 </html>

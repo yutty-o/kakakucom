@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kakakucom.repository.CategoryRepository">
+
+    <select id="findLargeCategories" resultType="kakakucom.model.LargeCategory">
+      SELECT
+        large_category_cd,
+        name
+      FROM
+        large_category
+      ORDER BY
+        sort_no ASC;
+    </select>
+
+    <select id="findSmallCategories" resultType="kakakucom.model.SmallCategory">
+      SELECT
+        small_category_cd,
+        large_category_cd,
+        name
+      FROM
+        small_category
+      ORDER BY
+        sort_no ASC;
+    </select>
+
+</mapper>
