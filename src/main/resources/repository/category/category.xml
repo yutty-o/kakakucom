@@ -4,25 +4,50 @@
 
 <mapper namespace="kakakucom.repository.CategoryRepository">
 
-    <select id="findLargeCategories" resultType="kakakucom.model.LargeCategory">
-      SELECT
-        large_category_cd,
-        name
-      FROM
-        large_category
-      ORDER BY
-        sort_no ASC;
+    <select id="findAllLargeCategories" resultType="kakakucom.model.LargeCategory">
+        <include refid="SelectLargeCategory" />
+        ORDER BY
+            sort_no ASC;
     </select>
 
-    <select id="findSmallCategories" resultType="kakakucom.model.SmallCategory">
-      SELECT
+    <select id="findOneLargeCategory" resultType="kakakucom.model.LargeCategory">
+        <include refid="SelectLargeCategory" />
+        WHERE
+            large_category_cd = '${largeCategoryCd}';
+    </select>
+
+    <select id="findAllSmallCategories" resultType="kakakucom.model.SmallCategory">
+        <include refid="SelectSmallCategory" />
+        ORDER BY
+            sort_no ASC;
+    </select>
+
+    <select id="findSmallCategoriesByLargeCd" resultType="kakakucom.model.SmallCategory">
+        <include refid="SelectSmallCategory" />
+        WHERE
+            large_category_cd = '${largeCategoryCd}';
+    </select>
+
+    <select id="findOneSmallCategory" resultType="kakakucom.model.SmallCategory">
+        <include refid="SelectSmallCategory" />
+        WHERE
+            small_category_cd = '${smallCategoryCd}';
+    </select>
+
+    <sql id="SelectLargeCategory">
+        SELECT
+          large_category_cd,
+          name
+        FROM
+          large_category
+    </sql>
+
+    <sql id="SelectSmallCategory">
+        SELECT
         small_category_cd,
         large_category_cd,
         name
       FROM
         small_category
-      ORDER BY
-        sort_no ASC;
-    </select>
-
+    </sql>
 </mapper>
