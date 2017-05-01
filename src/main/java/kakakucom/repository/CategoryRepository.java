@@ -3,18 +3,31 @@ package kakakucom.repository;
 import kakakucom.model.LargeCategory;
 import kakakucom.model.SmallCategory;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 
 /**
  * 商品カテゴリレポジトリ
- * Created by ogawayuuki on 2017/04/15.
  */
 @Mapper
 public interface CategoryRepository {
 
-    List<LargeCategory> findLargeCategories();
+    List<LargeCategory> findAllLargeCategories();
 
-    List<SmallCategory> findSmallCategories();
+    LargeCategory findOneLargeCategory(
+        @Param("largeCategoryCd") @Nonnull String largeCategoryCd
+    );
+
+    List<SmallCategory> findAllSmallCategories();
+
+    List<SmallCategory> findSmallCategoriesByLargeCd(
+        @Param("largeCategoryCd") @Nonnull String largeCategoryCd
+    );
+
+    SmallCategory findOneSmallCategory(
+        @Param("smallCategoryCd") @Nonnull String smallCategoryCd
+    );
 
 }

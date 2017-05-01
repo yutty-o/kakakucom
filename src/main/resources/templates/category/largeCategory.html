@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout = "http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/base">
+<head>
+    <title th:text="${category.largeCategory.name} + ' | 価格.com'">価格.com</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" />
+</head>
+<body>
+    <div layout:fragment="content">
+        <nav class="sideNav">
+            <div class="sideNav__menuBox">
+                <p class="sideNav__menuBox__ttl" th:text="${category.largeCategory.name}">大カテゴリ名</p>
+                <ul class="sideNav__menuBox__list">
+                    <li th:each="smallCategory: ${category.smallCategories}" th:text="${smallCategory.name}">小カテゴリ名</li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>
