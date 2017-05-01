@@ -60,7 +60,7 @@ public class CategoryService {
         final LargeCategory largeCategory = categoryRepository.findOneLargeCategory(largeCategoryCd);
         final List<SmallCategory> smallCategories = categoryRepository.findSmallCategoriesByLargeCd(largeCategoryCd);
 
-        if (largeCategoryCd == null) {
+        if (largeCategory == null) {
             throw exceptionProvider.notFoundResources(
                 "largeCategoryCd specified by pathVariable does not exist. "
             );
