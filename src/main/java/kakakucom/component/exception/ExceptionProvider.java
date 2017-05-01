@@ -1,7 +1,17 @@
 package kakakucom.component.exception;
 
-/**
- * Created by ogawayuuki on 2017/05/01.
- */
+import org.springframework.http.HttpStatus;
+import javax.annotation.Nonnull;
+
 public class ExceptionProvider {
+
+    /**
+     * 対象のリソースが見つからない場合
+     */
+    public ApplicationException notFoundResources(@Nonnull final String message) {
+        return new ApplicationException(
+            HttpStatus.NOT_FOUND,
+            message
+        );
+    }
 }
