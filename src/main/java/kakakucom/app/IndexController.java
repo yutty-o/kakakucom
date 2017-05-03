@@ -20,8 +20,8 @@ public class IndexController {
     CategoryService categoryService;
 
     @RequestMapping("/")
-    public String index(Model model) {
-        List<CategoryDto> categories = categoryService.fetchCategories();
+    public String showIndex(Model model) {
+        List<CategoryDto> categories = categoryService.fetchAll();
         model.addAttribute("categories", categories);
         return "index";
     }
