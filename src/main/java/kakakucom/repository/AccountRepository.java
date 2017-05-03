@@ -4,14 +4,15 @@ import kakakucom.model.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import javax.annotation.Nonnull;
+
 /**
  * 会員登録レポジトリ
- * Created by ogawayuuki on 2017/04/10
  */
 @Mapper
 public interface AccountRepository {
 
     int create(
-        @Param("user") final User user
+        @Param("user") @Nonnull final User user
     );
 }
