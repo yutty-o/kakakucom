@@ -43,7 +43,7 @@
     </sql>
 
     <sql id="SelectSmallCategory">
-        SELECT
+      SELECT
         small_category_cd,
         large_category_cd,
         name
