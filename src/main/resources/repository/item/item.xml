@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kakakucom.repository.ItemRepository">
+
+    <select id="findTopItemsByLargeCategoryCd" resultType="kakakucom.model.Item">
+        <include refid="SelectItems" />
+        WHERE
+          i.large_category_cd = '${largeCategoryCd}'
+        ORDER BY
+            i.item_id ASC
+        LIMIT 0, 10;
+    </select>
+
+    <sql id="SelectItems">
+        SELECT
+            i.item_id,
+            i.name,
+            i.image_path,
+            si.min_price,
+            lc.name AS large_category_name,
+            sc.name AS small_category_name,
+            i.description
+        FROM
+            items AS i
+            LEFT JOIN (
+                SELECT
+                    si.item_id,
+                    MIN(si.price) AS min_price
+                FROM
+                    store_item AS si
+                GROUP BY
+                    si.item_id
+            ) AS si ON (i.item_id = si.item_id)
+            INNER JOIN large_category AS lc ON (i.large_category_cd = lc.large_category_cd)
+            INNER JOIN small_category AS sc ON (i.small_category_cd = sc.small_category_cd)
+    </sql>
+</mapper>
