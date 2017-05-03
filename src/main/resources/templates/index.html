@@ -11,7 +11,7 @@
     <div layout:fragment="content">
         <div class="categories">
             <div class="category" th:each="category: ${categories}">
-                <a href="#" class="category__anchor_wrapper">
+                <a th:href="@{'/' + ${category.largeCategory.largeCategoryCd}}" class="category__anchor_wrapper">
                    <p class="category__large" th:text="${category.largeCategory.name}">大カテゴリ名</p>
                     <ul class="category__smalls">
                         <li th:each="smallCategory: ${category.smallCategories}" th:text="${smallCategory.name}">小カテゴリ名</li>
