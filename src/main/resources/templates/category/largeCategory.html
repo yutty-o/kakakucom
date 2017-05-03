@@ -5,18 +5,42 @@
       layout:decorator="layout/base">
 <head>
     <title th:text="${category.largeCategory.name} + ' | 価格.com'">価格.com</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/category/category.css}" />
 </head>
 <body>
     <div layout:fragment="content">
-        <nav class="sideNav">
-            <div class="sideNav__menuBox">
-                <p class="sideNav__menuBox__ttl" th:text="${category.largeCategory.name}">大カテゴリ名</p>
-                <ul class="sideNav__menuBox__list">
-                    <li th:each="smallCategory: ${category.smallCategories}" th:text="${smallCategory.name}">小カテゴリ名</li>
+        <nav class="side-nav">
+            <div class="side-nav__menuBox">
+                <p class="side-nav__menuBox__ttl" th:text="${category.largeCategory.name}">大カテゴリ名</p>
+                <ul class="side-nav__menuBox__list">
+                    <li th:each="smallCategory: ${category.smallCategories}">
+                        <a href="#" th:text="${smallCategory.name}">小カテゴリ名</a>
+                    </li>
                 </ul>
             </div>
         </nav>
+        <section class="main">
+            <div class="items">
+                <div class="item" th:each="item: ${items}">
+                    <a class="item__anchor-wrapper" href="#">
+                        <div class="item__photo">
+                            <img th:src="${item.imagePath}" th:alt="${item.name}" />
+                        </div>
+                        <div class="item__ttl">
+                            <ul class="item__ttl__label-list">
+                                <li class="item__ttl__label item__ttl__label--category" th:text="${item.smallCategoryName}">小カテゴリ名</li>
+                            </ul>
+                            <p class="item__ttl__name" th:text="${item.name}">商品名</p>
+                            <p class="item__ttl__price" th:if="${item.minPrice}">
+                                <span class="item__price__value" th:text="'¥' + ${item.minPrice}">値段</span>
+                                <span class="item__price__label item__price__label-min">最安値</span>
+                            </p>
+                            <p class="item__ttl__description" th:text="${item.description}">商品説明</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>

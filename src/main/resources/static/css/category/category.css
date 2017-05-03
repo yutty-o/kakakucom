@@ -1,0 +1,147 @@
+/**
+ * category.css
+ * 大カテゴリーページ, 小カテゴリーページのスタイル
+ */
+
+/* clearfix */
+#content {
+    overflow: hidden;
+    zoom: 1;
+}
+
+/* side-nav
+========================================================================== */
+.side-nav {
+    float: left;
+    margin-right: 25px;
+    width: 320px;
+}
+
+.side-nav__menuBox__ttl {
+    background-color: #fff;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.side-nav__menuBox__list {
+    margin-top: 4px;
+}
+
+.side-nav__menuBox__list li a {
+    background-color: #fff;
+    display: block;
+    padding: 16px 18px;
+}
+
+.side-nav__menuBox__list li a:hover,
+.side-nav__menuBox__list li.is-active a {
+    background-color: #f7f7f7;
+}
+
+/* main
+========================================================================== */
+
+.main {
+    overflow: hidden;
+}
+
+/* clearfix */
+.items {
+    overflow: hidden;
+    zoom: 1;
+}
+
+.item {
+    float: left;
+    margin-bottom: 20px;
+    margin-left: 2%;
+    width: 32%;
+    height: 270px;
+    overflow: hidden;
+}
+
+.item__anchor-wrapper {
+    background-color: #ffffff;
+    box-shadow: 0 1px 1px 1px rgba(7,7,83,.35);
+    border-radius: 2px;
+    display: block;
+}
+
+.item:nth-child(3n-2) {
+    margin-left: 0;
+}
+
+.item__photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    overflow: hidden;
+}
+
+.item__photo img {
+    width: auto;
+    height: 100%;
+}
+
+.item__ttl {
+    box-sizing: border-box;
+    padding: 8px;
+    height: 120px;
+}
+
+.item__ttl__label {
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    padding: 3px 8px;
+    vertical-align: middle;
+}
+
+.item__ttl__label--category {
+    background-color: #71aecd;
+}
+
+.item__ttl__price {
+    padding-top: 5px;
+}
+
+.item__price__label {
+    border-radius: 3px;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    margin-left: 5px;
+    padding: 3px 5px;
+    vertical-align: middle;
+}
+
+.item__price__label-min {
+    background: #e65252;
+}
+
+.item__price__value {
+    color: #db3e26;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.item__ttl__name {
+    padding-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.item__ttl__description {
+    color: #666;
+    display: -webkit-box;
+    font-size: 12px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    padding-top: 5px;
+}
