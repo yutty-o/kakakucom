@@ -14,13 +14,15 @@ import java.util.List;
 @Mapper
 public interface CategoryRepository {
 
-    List<LargeCategory> findAllLargeCategories();
+    List<LargeCategory> findAllLargeCategories(
+    );
 
     LargeCategory findOneLargeCategory(
         @Param("largeCategoryCd") @Nonnull String largeCategoryCd
     );
 
-    List<SmallCategory> findAllSmallCategories();
+    List<SmallCategory> findAllSmallCategories(
+    );
 
     List<SmallCategory> findSmallCategoriesByLargeCd(
         @Param("largeCategoryCd") @Nonnull String largeCategoryCd
