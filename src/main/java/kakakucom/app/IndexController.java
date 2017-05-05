@@ -11,7 +11,6 @@ import java.util.List;
 
 /**
  * トップページ
- * Created by ogawayuuki on 2017/04/12
  */
 @Controller
 public class IndexController {
