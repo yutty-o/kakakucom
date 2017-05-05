@@ -11,7 +11,7 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Created by ogawayuuki on 2017/04/12.
+ * 再入力パスワード確認
  */
 @Documented
 @Constraint(validatedBy = {ConfirmValidator.class})
