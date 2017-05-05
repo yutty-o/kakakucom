@@ -35,8 +35,12 @@
 }
 
 .side-nav__menuBox__list li a:hover,
-.side-nav__menuBox__list li.is-active a {
+.side-nav__menuBox__list li a.is-active {
     background-color: #f7f7f7;
+}
+
+.side-nav__menuBox__list li a.is-active:hover {
+    color: #4c4c4c;
 }
 
 /* main
