@@ -6,33 +6,28 @@ import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
-import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.PARAMETER;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * 再入力パスワード確認
+ * 大カテゴリーCDの存在チェック
  */
 @Documented
-@Constraint(validatedBy = {ConfirmValidator.class})
-@Target({TYPE, ANNOTATION_TYPE})
+@Constraint(validatedBy = {LargeCategoryCdValidator.class})
+@Target({FIELD, PARAMETER})
 @Retention(RUNTIME)
-public @interface Confirm {
-    String message() default "{kakakucom.validation.Confirm.message}";
+public @interface LargeCategoryCd {
+    String message() default "inValid largeCategoryCd";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
 
-    /**
-     * Field name
-     */
-    String field();
-
-    @Target({TYPE, ANNOTATION_TYPE})
+    @Target({FIELD, PARAMETER})
     @Retention(RUNTIME)
     @Documented
     public @interface List {
-        Confirm[] value();
+        LargeCategoryCd[] value();
     }
 }

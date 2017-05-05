@@ -9,8 +9,7 @@ import javax.validation.ConstraintValidatorContext;
 import java.util.Objects;
 
 /**
- * パスワード入力確認バリデーター
- * Created by ogawayuuki on 2017/04/12.
+ * 再入力パスワード確認ロジック
  */
 public class ConfirmValidator implements ConstraintValidator<Confirm, Object> {
     private String field;

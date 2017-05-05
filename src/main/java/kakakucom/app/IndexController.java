@@ -1,8 +1,7 @@
 package kakakucom.app;
 
 import kakakucom.dto.CategoryDto;
-import kakakucom.model.LargeCategory;
-import kakakucom.service.IndexService;
+import kakakucom.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,17 +11,16 @@ import java.util.List;
 
 /**
  * トップページ
- * Created by ogawayuuki on 2017/04/12
  */
 @Controller
 public class IndexController {
 
     @Autowired
-    IndexService indexService;
+    CategoryService categoryService;
 
     @RequestMapping("/")
-    public String index(Model model) {
-        List<CategoryDto> categories = indexService.fetchCategories();
+    public String showIndex(Model model) {
+        List<CategoryDto> categories = categoryService.fetchAll();
         model.addAttribute("categories", categories);
         return "index";
     }
