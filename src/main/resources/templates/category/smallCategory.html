@@ -15,6 +15,7 @@
                 <ul class="side-nav__menuBox__list">
                     <li th:each="smallCategory: ${category.smallCategories}">
                         <a th:href="@{'/category/' + ${category.largeCategory.largeCategoryCd} + '/' + ${smallCategory.smallCategoryCd}}"
+                           th:class="${smallCategory.smallCategoryCd == selectedSmallCategoryCd}? 'is-active'"
                            th:text="${smallCategory.name}">小カテゴリ名</a>
                     </li>
                 </ul>
@@ -28,9 +29,6 @@
                             <img th:src="${item.imagePath}" th:alt="${item.name}" />
                         </div>
                         <div class="item__ttl">
-                            <ul class="item__ttl__label-list">
-                                <li class="item__ttl__label item__ttl__label--category" th:text="${item.smallCategoryName}">小カテゴリ名</li>
-                            </ul>
                             <p class="item__ttl__name" th:text="${item.name}">商品名</p>
                             <p class="item__ttl__price" th:if="${item.minPrice}">
                                 <span class="item__price__value" th:text="'¥' + ${item.minPrice}">値段</span>
