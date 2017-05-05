@@ -60,16 +60,29 @@ public class CategoryService {
         final LargeCategory largeCategory = categoryRepository.findOneLargeCategory(largeCategoryCd);
         final List<SmallCategory> smallCategories = categoryRepository.findSmallCategoriesByLargeCd(largeCategoryCd);
 
-        // 存在しない大カテゴリーの場合はエラー
-        if (largeCategory == null) {
-            throw exceptionProvider.notFoundResources(
-                "largeCategoryCd specified by pathVariable does not exist. "
-            );
-        }
-
         return new CategoryDto(
             largeCategory,
             smallCategories
         );
+    }
+
+    /**
+     * 大カテゴリーCDが適切か確認します。
+     *
+     * @param 大カテゴリーCD
+     * @return 指定の大カテゴリーが存在するか
+     */
+    public boolean isValidLargeCategoryCd(@Nonnull final String largeCategoryCd) {
+        return ( categoryRepository.countLargeCategoryByLargeCd(largeCategoryCd) != 0 );
+    }
+
+    /**
+     * 小カテゴリーCDが適切か確認します。
+     *
+     * @param 小カテゴリーCD
+     * @return 指定の小カテゴリーが存在するか
+     */
+    public boolean isValidSmallCategoryCd(@Nonnull final String smallCategoryCd) {
+        return ( categoryRepository.countSmallCategoryBySmallCd(smallCategoryCd) != 0 );
     }
 }
