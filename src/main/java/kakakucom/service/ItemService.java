@@ -23,4 +23,9 @@ public class ItemService {
     public List<Item> fetchTopItemsByLargeCategoryCd(@Nonnull String largeCategoryCd) {
         return itemRepository.findTopItemsByLargeCategoryCd(largeCategoryCd);
     }
+
+
+    public List<Item> fetchTopItemsBySmallCategoryCd(@Nonnull String smallCategoryCd) {
+        return itemRepository.findTopItemsBySmallCategoryCd(smallCategoryCd);
+    }
 }

@@ -13,6 +13,15 @@
         LIMIT 0, 10;
     </select>
 
+    <select id="findTopItemsBySmallCategoryCd" resultType="kakakucom.model.Item">
+        <include refid="SelectItems" />
+        WHERE
+        i.small_category_cd = '${smallCategoryCd}'
+        ORDER BY
+        i.item_id ASC
+        LIMIT 0, 10;
+    </select>
+
     <sql id="SelectItems">
         SELECT
             i.item_id,
