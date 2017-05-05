@@ -28,26 +28,38 @@
             large_category_cd = '${largeCategoryCd}';
     </select>
 
-    <select id="findOneSmallCategory" resultType="kakakucom.model.SmallCategory">
-        <include refid="SelectSmallCategory" />
+    <select id="countLargeCategoryByLargeCd" resultType="int">
+        SELECT
+            COUNT(large_category_cd)
+        FROM
+            large_category
         WHERE
-            small_category_cd = '${smallCategoryCd}';
+            large_category_cd =  '${largeCategoryCd}';
+    </select>
+
+    <select id="countSmallCategoryBySmallCd" resultType="int">
+        SELECT
+            COUNT(small_category_cd)
+        FROM
+            small_category
+        WHERE
+            small_category_cd =  '${smallCategoryCd}';
     </select>
 
     <sql id="SelectLargeCategory">
         SELECT
-          large_category_cd,
-          name
+            large_category_cd,
+            name
         FROM
-          large_category
+            large_category
     </sql>
 
     <sql id="SelectSmallCategory">
       SELECT
-        small_category_cd,
-        large_category_cd,
-        name
+          small_category_cd,
+          large_category_cd,
+          name
       FROM
-        small_category
+          small_category
     </sql>
 </mapper>

@@ -28,8 +28,11 @@ public interface CategoryRepository {
         @Param("largeCategoryCd") @Nonnull String largeCategoryCd
     );
 
-    SmallCategory findOneSmallCategory(
-        @Param("smallCategoryCd") @Nonnull String smallCategoryCd
+    int countLargeCategoryByLargeCd(
+        @Param("largeCategoryCd") @Nonnull String largeCategoryCd
     );
 
+    int countSmallCategoryBySmallCd(
+        @Param("smallCategoryCd") @Nonnull String smallCategoryCd
+    );
 }
