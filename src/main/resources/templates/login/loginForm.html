@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout = "http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/base">
+<head>
+    <title>ログイン | 価格.com</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login/login.css}" />
+</head>
+<body>
+    <div layout:fragment="content">
+        <section class="main">
+            <h2>ログイン</h2>
+            <form method="post" th:action="@{/login}">
+                <div th:if="${param.error}" class="login__alert">
+                    <p>ユーザー名またはパスワードが正しくありません。</p>
+                </div>
+                <table class="login__table">
+                    <tr>
+                        <th>メールアドレス</th>
+                        <td><input type="text" name="username" placeholder="example@kakaku.com" required="required" autofocus="autofocus" /></td>
+                    </tr>
+                    <tr>
+                        <th>パスワード</th>
+                        <td><input type="password" name="password" placeholder="パスワード" required="required" /></td>
+                    </tr>
+                </table>
+                <div class="login__submit">
+                    <button type="submit">ログイン</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
