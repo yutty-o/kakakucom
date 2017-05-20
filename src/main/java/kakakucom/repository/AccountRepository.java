@@ -7,9 +7,6 @@ import org.apache.ibatis.annotations.Param;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 
-/**
- * 会員登録レポジトリ
- */
 @Mapper
 public interface AccountRepository {
 
