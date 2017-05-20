@@ -33,7 +33,7 @@ public class CategoryController {
      * 大カテゴリーページ
      */
     @RequestMapping(value = "/{largeCategoryCd}")
-    public String showLargeCategory(
+    public String largeCategory(
         @PathVariable("largeCategoryCd") @LargeCategoryCd final String largeCategoryCd,
         Model model
     ) {
@@ -48,7 +48,7 @@ public class CategoryController {
      * 小カテゴリーページ
      */
     @RequestMapping(value = "/{largeCategoryCd}/{smallCategoryCd}")
-    public String showSmallCategory(
+    public String smallCategory(
         @PathVariable("largeCategoryCd") @LargeCategoryCd final String largeCategoryCd,
         @PathVariable("smallCategoryCd") @SmallCategoryCd final String smallCategoryCd,
         Model model
