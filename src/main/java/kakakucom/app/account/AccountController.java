@@ -39,7 +39,6 @@ public class AccountController {
         User user = User.builder()
             .name(form.getName())
             .email(form.getEmail())
-            .isDeleted(false)
             .build();
         accountService.create(user, form.getPassword());
         attributes.addFlashAttribute(user);
