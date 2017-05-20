@@ -7,9 +7,6 @@ import org.apache.ibatis.annotations.Param;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-/**
- * 商品レポジトリ
- */
 @Mapper
 public interface ItemRepository {
 

@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-/**
- * トップページ
- */
 @Controller
 public class IndexController {
 
