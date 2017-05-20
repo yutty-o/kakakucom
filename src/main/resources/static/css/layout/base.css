@@ -6,11 +6,13 @@
 /* foundation
 ========================================================================== */
 
+h2 { margin: 0; }
 ul { margin: 0; padding: 0; }
 li { list-style: none; }
 p { margin: 0; }
 a { color: #4c4c4c; text-decoration: none; }
 a:hover { color: #33aeff; }
+button { border: 0; cursor: pointer; }
 
 
 /* body
