@@ -4,20 +4,31 @@
 
 <mapper namespace="kakakucom.repository.AccountRepository">
 
-    <insert id="create">
-      INSERT INTO
-        users (
+    <select id="findOne" resultType="kakakucom.model.User">
+      SELECT
+          user_id,
           name,
           email,
-          password,
-          is_deleted
-        )
+          password
+      FROM
+          users
+      WHERE
+          is_deleted = 0
+          AND email = '${email}'
+    </select>
+
+    <insert id="create">
+      INSERT INTO
+          users (
+              name,
+              email,
+              password
+          )
       VALUES (
-        #{user.name},
-        #{user.email},
-        #{user.password},
-        #{user.isDeleted}
-      )
+          #{user.name},
+          #{user.email},
+          #{user.password}
+        )
     </insert>
 
 </mapper>
