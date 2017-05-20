@@ -2,6 +2,7 @@ package kakakucom.component.advice;
 
 import kakakucom.component.exception.ApplicationException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,4 +25,13 @@ public class ExceptionControllerAdvice {
         return mav;
     }
 
+    @ExceptionHandler(Exception.class)
+    public ModelAndView handleUsernameNotFoundException(HttpServletRequest req, Exception ex)
+        throws Exception {
+        log.error(req.getRequestURI() + " : " + ex.getMessage());
+
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("error");
+        return mav;
+    }
 }
