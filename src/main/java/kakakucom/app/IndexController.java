@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-/**
- * トップページ
- */
 @Controller
 public class IndexController {
 
@@ -19,7 +16,7 @@ public class IndexController {
     CategoryService categoryService;
 
     @RequestMapping("/")
-    public String showIndex(Model model) {
+    public String index(Model model) {
         List<CategoryDto> categories = categoryService.fetchAll();
         model.addAttribute("categories", categories);
         return "index";

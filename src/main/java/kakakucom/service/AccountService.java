@@ -7,10 +7,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * 会員登録サービス
- * Created by ogawayuuki on 2017/04/10
- */
 @Service
 @Transactional
 public class AccountService {

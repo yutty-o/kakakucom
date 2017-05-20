@@ -5,14 +5,16 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import javax.annotation.Nonnull;
+import java.util.Optional;
 
-/**
- * 会員登録レポジトリ
- */
 @Mapper
 public interface AccountRepository {
 
     int create(
         @Param("user") @Nonnull final User user
+    );
+
+    User findOne(
+        @Param("email") @Nonnull final String email
     );
 }

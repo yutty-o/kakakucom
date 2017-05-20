@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-/**
- * 会員登録コントローラ
- */
 @Controller
 @RequestMapping("account")
 public class AccountController {
@@ -39,7 +36,6 @@ public class AccountController {
         User user = User.builder()
             .name(form.getName())
             .email(form.getEmail())
-            .isDeleted(false)
             .build();
         accountService.create(user, form.getPassword());
         attributes.addFlashAttribute(user);

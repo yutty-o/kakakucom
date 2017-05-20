@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout = "http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/base">
 <head>
-    <meta charset="UTF-8"/>
-    <title>404エラー</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/wro.css}" href="../static/css/wro.css"/>
+    <title>お探しのページは存在しません | 価格.com</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/error.css}" />
 </head>
 <body>
-
-<div class="container">
-    <div class="alert alert-danger">
-        404。<a th:href="@{/}" href="goods/showGoods.html">ホーム</a>に戻ってやり直してください。
-    </div>
+<div layout:fragment="content">
+    <section class="main">
+        <p>お探しのページは存在しません。</p>
+    </section>
 </div>
 </body>
 </html>

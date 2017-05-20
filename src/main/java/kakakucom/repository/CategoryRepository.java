@@ -8,9 +8,6 @@ import org.apache.ibatis.annotations.Param;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-/**
- * 商品カテゴリレポジトリ
- */
 @Mapper
 public interface CategoryRepository {
 

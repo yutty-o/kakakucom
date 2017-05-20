@@ -33,11 +33,11 @@ CREATE TABLE IF NOT EXISTS `kakakucom`.`small_category` (
 
 CREATE TABLE IF NOT EXISTS `kakakucom`.`users` (
   `user_id` INT(6) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(32) NULL,
-  `password` VARCHAR(32) NOT NULL,
-  `email` VARCHAR(50) NOT NULL,
-  `is_deleted` TINYINT(1) NULL,
+  `name` VARCHAR(32) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(60) NOT NULL,
   `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_deleted` TINYINT(1) NULL DEFAULT 0,
   PRIMARY KEY (`user_id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC));
 

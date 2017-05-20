@@ -15,9 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-/**
- * 商品カテゴリーページ
- */
 @Controller
 @Validated
 @RequestMapping("category")
@@ -29,11 +26,8 @@ public class CategoryController {
     @Autowired
     ItemService itemService;
 
-    /**
-     * 大カテゴリーページ
-     */
     @RequestMapping(value = "/{largeCategoryCd}")
-    public String showLargeCategory(
+    public String largeCategory(
         @PathVariable("largeCategoryCd") @LargeCategoryCd final String largeCategoryCd,
         Model model
     ) {
@@ -44,11 +38,8 @@ public class CategoryController {
         return "category/largeCategory";
     }
 
-    /**
-     * 小カテゴリーページ
-     */
     @RequestMapping(value = "/{largeCategoryCd}/{smallCategoryCd}")
-    public String showSmallCategory(
+    public String smallCategory(
         @PathVariable("largeCategoryCd") @LargeCategoryCd final String largeCategoryCd,
         @PathVariable("smallCategoryCd") @SmallCategoryCd final String smallCategoryCd,
         Model model
