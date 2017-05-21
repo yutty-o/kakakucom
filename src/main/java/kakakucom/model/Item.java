@@ -12,7 +12,9 @@ public class Item implements Serializable {
     private String name;
     private String imagePath;
     private Integer minPrice;
+    private String largeCategoryCd;
     private String largeCategoryName;
+    private String smallCategoryCd;
     private String smallCategoryName;
     private String description;
 }

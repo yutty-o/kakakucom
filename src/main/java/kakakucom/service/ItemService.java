@@ -14,16 +14,13 @@ public class ItemService {
     @Autowired
     ItemRepository itemRepository;
 
-    /**
-     * 大カテゴリーに当てはまる商品情報を取得します。
-     *
-     * @param 大カテゴリーCD
-     * @return 商品情報
-     */
+    public Item fetchOne(@Nonnull String itemId) {
+        return itemRepository.findOne(itemId);
+    }
+
     public List<Item> fetchTopItemsByLargeCategoryCd(@Nonnull String largeCategoryCd) {
         return itemRepository.findTopItemsByLargeCategoryCd(largeCategoryCd);
     }
-
 
     public List<Item> fetchTopItemsBySmallCategoryCd(@Nonnull String smallCategoryCd) {
         return itemRepository.findTopItemsBySmallCategoryCd(smallCategoryCd);

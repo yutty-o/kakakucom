@@ -4,10 +4,16 @@
 
 <mapper namespace="kakakucom.repository.ItemRepository">
 
+    <select id="findOne" resultType="kakakucom.model.Item">
+        <include refid="SelectItems" />
+        WHERE
+            i.item_id = '${itemId}'
+    </select>
+
     <select id="findTopItemsByLargeCategoryCd" resultType="kakakucom.model.Item">
         <include refid="SelectItems" />
         WHERE
-          i.large_category_cd = '${largeCategoryCd}'
+            i.large_category_cd = '${largeCategoryCd}'
         ORDER BY
             i.item_id ASC
         LIMIT 0, 10;
@@ -16,10 +22,10 @@
     <select id="findTopItemsBySmallCategoryCd" resultType="kakakucom.model.Item">
         <include refid="SelectItems" />
         WHERE
-        i.small_category_cd = '${smallCategoryCd}'
+            i.small_category_cd = '${smallCategoryCd}'
         ORDER BY
-        i.item_id ASC
-        LIMIT 0, 10;
+            i.item_id ASC
+            LIMIT 0, 10;
     </select>
 
     <sql id="SelectItems">
@@ -28,7 +34,9 @@
             i.name,
             i.image_path,
             si.min_price,
+            i.large_category_cd,
             lc.name AS large_category_name,
+            i.small_category_cd,
             sc.name AS small_category_name,
             i.description
         FROM
