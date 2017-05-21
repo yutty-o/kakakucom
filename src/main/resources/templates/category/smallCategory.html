@@ -24,7 +24,7 @@
         <section class="main">
             <div class="items">
                 <div class="item" th:each="item: ${items}">
-                    <a class="item__anchor-wrapper" href="#">
+                    <a th:href="@{'/item/' + ${item.itemId}}" class="item__anchor-wrapper">
                         <div class="item__photo">
                             <img th:src="${item.imagePath}" th:alt="${item.name}" />
                         </div>
