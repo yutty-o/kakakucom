@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "${CI_PULL_REQUEST}"
+echo "${CIRCLE_PR_NUMBER}"
 
-if [[ ! "${CI_PULL_REQUEST}" =~ /pull/[0-9]+$ ]]; then
+if [[ ! "${CIRCLE_PR_NUMBER}" =~ [0-9]+$ ]]; then
   exit 0
 fi
 
-PR_NUMBER=`echo "${CI_PULL_REQUEST}" | sed -e 's/.*\///g'`
+PR_NUMBER=`echo "${CIRCLE_PR_NUMBER}"`
 
 echo "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.0.1:sonar"
 echo "  -Dmaven.test.skip=true"
