@@ -47,9 +47,9 @@ CREATE TABLE IF NOT EXISTS `kakakucom`.`stores` (
   `url` VARCHAR(2083) NULL,
   `address` VARCHAR(255) NULL,
   `tel` VARCHAR(20) NULL,
-  `bank_pay` TINYINT NULL,
-  `credit_pay` TINYINT NULL,
-  `convenience_pay` TINYINT NULL,
+  `bank_pay` BOOLEAN DEFAULT FALSE,
+  `credit_pay` BOOLEAN DEFAULT FALSE,
+  `convenience_pay` BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (`store_id`))
   ENGINE = InnoDB;
 
