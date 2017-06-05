@@ -28,6 +28,15 @@
             LIMIT 0, 10;
     </select>
 
+    <select id="countByItemId" resultType="int">
+        SELECT
+            COUNT(item_id)
+        FROM
+            items
+        WHERE
+            item_id = '${itemId}'
+    </select>
+
     <sql id="SelectItems">
         SELECT
             i.item_id,

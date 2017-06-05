@@ -25,4 +25,8 @@ public class ItemService {
     public List<Item> fetchTopItemsBySmallCategoryCd(@Nonnull String smallCategoryCd) {
         return itemRepository.findTopItemsBySmallCategoryCd(smallCategoryCd);
     }
+
+    public boolean isValidItemId(@Nonnull final String itemId) {
+        return ( itemRepository.countByItemId(itemId) != 0 );
+    }
 }

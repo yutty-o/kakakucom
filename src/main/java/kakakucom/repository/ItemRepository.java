@@ -21,4 +21,8 @@ public interface ItemRepository {
     List<Item> findTopItemsBySmallCategoryCd(
         @Param("smallCategoryCd") @Nonnull String smallCategoryCd
     );
+
+    int countByItemId(
+        @Param("itemId") @Nonnull String itemId
+    );
 }
