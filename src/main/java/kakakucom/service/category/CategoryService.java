@@ -1,4 +1,4 @@
-package kakakucom.service;
+package kakakucom.service.category;
 
 import kakakucom.component.exception.ExceptionProvider;
 import kakakucom.dto.CategoryDto;

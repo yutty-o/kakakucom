@@ -1,7 +1,7 @@
 package kakakucom.app.item;
 
 import kakakucom.model.Item;
-import kakakucom.service.ItemService;
+import kakakucom.service.item.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

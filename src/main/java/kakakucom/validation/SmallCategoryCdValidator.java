@@ -1,7 +1,7 @@
 package kakakucom.validation;
 
 import kakakucom.component.exception.ExceptionProvider;
-import kakakucom.service.CategoryService;
+import kakakucom.service.category.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;

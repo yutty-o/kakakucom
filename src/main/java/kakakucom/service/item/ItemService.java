@@ -1,4 +1,4 @@
-package kakakucom.service;
+package kakakucom.service.item;
 
 import kakakucom.model.Item;
 import kakakucom.repository.ItemRepository;

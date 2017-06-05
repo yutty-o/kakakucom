@@ -2,8 +2,8 @@ package kakakucom.app.category;
 
 import kakakucom.dto.CategoryDto;
 import kakakucom.model.Item;
-import kakakucom.service.CategoryService;
-import kakakucom.service.ItemService;
+import kakakucom.service.category.CategoryService;
+import kakakucom.service.item.ItemService;
 import kakakucom.validation.LargeCategoryCd;
 import kakakucom.validation.SmallCategoryCd;
 import org.springframework.beans.factory.annotation.Autowired;
