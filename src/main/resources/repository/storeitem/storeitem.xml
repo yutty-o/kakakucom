@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kakakucom.repository.StoreItemRepository">
+
+    <select id="findByItemIdOrderByPriceDesc" resultType="kakakucom.model.StoreItem">
+        <include refid="SelectStoreItems" />
+        ORDER BY
+            si.price DESC
+    </select>
+
+    <sql id="SelectStoreItems">
+        SELECT
+            si.store_item_id,
+            si.store_id,
+            si.item_id,
+            si.price,
+            si.stock,
+            si.shipping_period,
+            si.area,
+            si.comment,
+            si.color,
+            si.url,
+            s.name AS store_name,
+            s.url AS store_url,
+            s.bank_pay,
+            s.credit_pay,
+            s.convenience_pay
+        FROM
+            store_item AS si
+            LEFT JOIN
+                stores AS s ON (si.store_id = s.store_id)
+    </sql>
+</mapper>
