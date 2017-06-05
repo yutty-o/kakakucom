@@ -1,4 +1,4 @@
-package kakakucom.validation;
+package kakakucom.validation.category;
 
 import kakakucom.component.exception.ExceptionProvider;
 import kakakucom.service.category.CategoryService;
@@ -7,9 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-/**
- * 小カテゴリーCDの存在チェックロジック
- */
 public class SmallCategoryCdValidator implements ConstraintValidator<SmallCategoryCd, Object> {
 
     @Autowired
@@ -25,11 +22,9 @@ public class SmallCategoryCdValidator implements ConstraintValidator<SmallCatego
     }
 
     public boolean isValid(Object value, ConstraintValidatorContext context) {
-        // 適切な小カテゴリーCDではない場合、独自のexceptionをthrowする
+        // 適切な小カテゴリーCDではない場合、exceptionをthrowする
         if (!categoryService.isValidSmallCategoryCd(value.toString())) {
-            throw exceptionProvider.notFoundResources(
-                "invalid smallCategoryCd"
-            );
+            throw exceptionProvider.notFoundResources(message);
         }
         // 便宜上trueで返却する
         return true;

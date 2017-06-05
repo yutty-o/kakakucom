@@ -1,4 +1,4 @@
-package kakakucom.validation;
+package kakakucom.validation.form;
 
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;

@@ -1,4 +1,4 @@
-package kakakucom.validation;
+package kakakucom.validation.category;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -11,14 +11,14 @@ import static java.lang.annotation.ElementType.PARAMETER;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * 大カテゴリーCDの存在チェック
+ * 小カテゴリーCDの存在チェック
  */
 @Documented
-@Constraint(validatedBy = {LargeCategoryCdValidator.class})
+@Constraint(validatedBy = {SmallCategoryCdValidator.class})
 @Target({FIELD, PARAMETER})
 @Retention(RUNTIME)
-public @interface LargeCategoryCd {
-    String message() default "inValid largeCategoryCd";
+public @interface SmallCategoryCd {
+    String message() default "invalid smallCategoryCd";
 
     Class<?>[] groups() default {};
 
@@ -28,6 +28,6 @@ public @interface LargeCategoryCd {
     @Retention(RUNTIME)
     @Documented
     public @interface List {
-        LargeCategoryCd[] value();
+        SmallCategoryCd[] value();
     }
 }
