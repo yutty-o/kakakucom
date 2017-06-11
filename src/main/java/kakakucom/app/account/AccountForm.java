@@ -1,6 +1,6 @@
 package kakakucom.app.account;
 
-import kakakucom.validation.Confirm;
+import kakakucom.validation.form.Confirm;
 import lombok.Data;
 import org.hibernate.validator.constraints.Email;
 

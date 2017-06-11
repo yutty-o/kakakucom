@@ -1,4 +1,4 @@
-package kakakucom.validation;
+package kakakucom.validation.category;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -18,7 +18,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({FIELD, PARAMETER})
 @Retention(RUNTIME)
 public @interface SmallCategoryCd {
-    String message() default "inValid smallCategoryCd";
+    String message() default "invalid smallCategoryCd";
 
     Class<?>[] groups() default {};
 

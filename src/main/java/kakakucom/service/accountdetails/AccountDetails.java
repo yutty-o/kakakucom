@@ -1,4 +1,4 @@
-package kakakucom.service;
+package kakakucom.service.accountdetails;
 
 import kakakucom.model.User;
 import org.springframework.security.core.GrantedAuthority;

@@ -1,4 +1,4 @@
-package kakakucom.service;
+package kakakucom.service.accountdetails;
 
 import kakakucom.component.exception.ExceptionProvider;
 import kakakucom.repository.AccountRepository;

@@ -10,11 +10,19 @@ import java.util.List;
 @Mapper
 public interface ItemRepository {
 
+    Item findOne(
+        @Param("itemId") @Nonnull String itemId
+    );
+
     List<Item> findTopItemsByLargeCategoryCd(
         @Param("largeCategoryCd") @Nonnull String largeCategoryCd
     );
 
     List<Item> findTopItemsBySmallCategoryCd(
         @Param("smallCategoryCd") @Nonnull String smallCategoryCd
+    );
+
+    int countByItemId(
+        @Param("itemId") @Nonnull String itemId
     );
 }

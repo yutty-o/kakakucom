@@ -1,0 +1,161 @@
+.item {
+    background-color: #fff;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 15px;
+}
+
+.item__info {
+    float:left;
+    box-sizing: border-box;
+    width: 800px;
+    height: 300px;
+    padding: 15px;
+}
+
+.item__label {
+    margin-bottom: 10px;
+}
+
+.item__category {
+    background-color: #71aecd;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    padding: 3px 8px;
+    vertical-align: middle;
+}
+
+.item__category--large {
+    margin-right: 8px;
+    position: relative;
+}
+
+.item__category--large:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: solid 4px transparent;
+    border-left: solid 6px #71aecd;
+    position: absolute;
+    top: 50%;
+    right: -14px;
+    margin-top: -4px;
+}
+
+.item__name {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.item__min-price {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.item__min-price span {
+    font-weight: bold;
+    color: #db3e26;
+}
+
+.item__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+.item__image img {
+    width: auto;
+    height: 100%;
+}
+
+.store-item {
+    background-color: #fff;
+    box-sizing: border-box;;
+    width: 100%;
+    padding: 15px;
+}
+
+.store-ranking-table {
+    border-radius: 0;
+    margin-bottom: 15px;
+    overflow: hidden;
+    width: 100%;
+    border-spacing: 0;
+    background: none repeat scroll 0 0 #fff;
+}
+
+.store-ranking-table thead {
+    background: none repeat scroll 0 0 #e8e8e8;
+}
+
+.store-ranking-table thead th {
+    padding: 20px 15px;
+    text-align: left;
+}
+
+.store-ranking-table tbody tr:nth-child(2n+1) {
+    background: none repeat scroll 0 0 #f7f7f7;
+}
+
+.store-ranking-table tbody td {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 9px 15px;
+}
+
+.store-ranking-table__price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #db3e26;
+}
+
+.store-ranking-table__store-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.store-ranking-table__pay {
+
+}
+
+.store-ranking-table__pay-label {
+    background: #eee;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px;
+
+}
+
+.store-ranking-table__shop-link {
+    background-color: #1b9af7;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    padding: 16px 32px 16px 26px;
+    position: relative;
+}
+
+.store-ranking-table__shop-link:hover {
+    background-color: #007ed9;
+    color: #fff;
+}
+
+.store-ranking-table__shop-link:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border: solid 4px transparent;
+    border-left: solid 6px #fff;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -4px;
+}

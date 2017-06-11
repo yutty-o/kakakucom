@@ -1,7 +1,7 @@
 package kakakucom.app;
 
 import kakakucom.dto.CategoryDto;
-import kakakucom.service.CategoryService;
+import kakakucom.service.category.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

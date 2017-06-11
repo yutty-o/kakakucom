@@ -1,15 +1,12 @@
-package kakakucom.validation;
+package kakakucom.validation.category;
 
 import kakakucom.component.exception.ExceptionProvider;
-import kakakucom.service.CategoryService;
+import kakakucom.service.category.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-/**
- * 大カテゴリーCDの存在チェックロジック
- */
 public class LargeCategoryCdValidator implements ConstraintValidator<LargeCategoryCd, Object> {
 
     @Autowired
@@ -25,11 +22,9 @@ public class LargeCategoryCdValidator implements ConstraintValidator<LargeCatego
     }
 
     public boolean isValid(Object value, ConstraintValidatorContext context) {
-        // 適切な大カテゴリーCDではない場合、独自のexceptionをthrowする
+        // 適切な大カテゴリーCDではない場合、exceptionをthrowする
         if (!categoryService.isValidLargeCategoryCd(value.toString())) {
-            throw exceptionProvider.notFoundResources(
-                "invalid largeCategoryCd"
-            );
+            throw exceptionProvider.notFoundResources(message);
         }
         // 便宜上trueで返却する
         return true;

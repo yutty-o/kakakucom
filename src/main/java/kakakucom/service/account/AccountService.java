@@ -1,4 +1,4 @@
-package kakakucom.service;
+package kakakucom.service.account;
 
 import kakakucom.model.User;
 import kakakucom.repository.AccountRepository;

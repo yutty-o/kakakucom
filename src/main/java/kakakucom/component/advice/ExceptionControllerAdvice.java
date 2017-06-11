@@ -24,14 +24,4 @@ public class ExceptionControllerAdvice {
         mav.setViewName("error/" + ex.getStatusCode().value());
         return mav;
     }
-
-    @ExceptionHandler(Exception.class)
-    public ModelAndView handleUsernameNotFoundException(HttpServletRequest req, Exception ex)
-        throws Exception {
-        log.error(req.getRequestURI() + " : " + ex.getMessage());
-
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("error");
-        return mav;
-    }
 }
