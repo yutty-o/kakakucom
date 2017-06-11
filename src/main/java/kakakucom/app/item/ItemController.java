@@ -31,7 +31,7 @@ public class ItemController {
         Model model
     ) {
         Item item = itemService.fetchOne(itemId);
-        List<StoreItem> storeItems = storeItemService.fetchByItemIdOrderByPriceDesc(itemId);
+        List<StoreItem> storeItems = storeItemService.fetchByItemIdOrderByPriceASC(itemId);
 
         model.addAttribute("item", item);
         model.addAttribute("storeItems", storeItems);

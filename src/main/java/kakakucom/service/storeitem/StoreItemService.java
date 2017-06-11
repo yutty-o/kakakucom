@@ -13,7 +13,7 @@ public class StoreItemService {
     @Autowired
     StoreItemRepository storeItemRepository;
 
-    public List<StoreItem> fetchByItemIdOrderByPriceDesc(final String itemId) {
-        return storeItemRepository.findByItemIdOrderByPriceDesc(itemId);
+    public List<StoreItem> fetchByItemIdOrderByPriceASC(final String itemId) {
+        return storeItemRepository.findByItemIdOrderByPriceASC(itemId);
     }
 }

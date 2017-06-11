@@ -4,10 +4,10 @@
 
 <mapper namespace="kakakucom.repository.StoreItemRepository">
 
-    <select id="findByItemIdOrderByPriceDesc" resultType="kakakucom.model.StoreItem">
+    <select id="findByItemIdOrderByPriceASC" resultType="kakakucom.model.StoreItem">
         <include refid="SelectStoreItems" />
         ORDER BY
-            si.price DESC
+            si.price ASC
     </select>
 
     <sql id="SelectStoreItems">

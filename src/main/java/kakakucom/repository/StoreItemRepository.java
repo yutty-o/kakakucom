@@ -10,7 +10,7 @@ import java.util.List;
 @Mapper
 public interface StoreItemRepository {
 
-    List<StoreItem> findByItemIdOrderByPriceDesc(
+    List<StoreItem> findByItemIdOrderByPriceASC(
         @Param("itemId") @Nonnull String itemId
     );
 }
