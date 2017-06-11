@@ -31,7 +31,7 @@
                         <div class="item__ttl">
                             <p class="item__ttl__name" th:text="${item.name}">商品名</p>
                             <p class="item__ttl__price" th:if="${item.minPrice}">
-                                <span class="item__price__value" th:text="'¥' + ${item.minPrice}">値段</span>
+                                <span class="item__price__value" th:text="'¥' + ${#numbers.formatInteger(item.minPrice, 3, 'COMMA')}">値段</span>
                                 <span class="item__price__label item__price__label-min">最安値</span>
                             </p>
                             <p class="item__ttl__description" th:text="${item.description}">商品説明</p>
