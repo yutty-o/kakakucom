@@ -17,7 +17,7 @@
                 </ul>
                 <h2 class="item__name" th:text="${item.name}">商品名</h2>
                 <div class="item__detail">
-                    <p class="item__min-price">最安価格(税込)：<span th:text="'¥' + ${#numbers.formatInteger(item.minPrice, 3, 'COMMA')}">値段</span></p>
+                    <p class="item__min-price" th:if="${item.minPrice}">最安価格(税込)：<span th:text="'¥' + ${#numbers.formatInteger(item.minPrice, 3, 'COMMA')}">値段</span></p>
                     <p class="item__description" th:text="${item.description}"></p>
                 </div>
             </div>
