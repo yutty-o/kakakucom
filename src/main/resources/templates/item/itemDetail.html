@@ -9,19 +9,57 @@
 </head>
 <body>
     <div layout:fragment="content">
-        <section class="main">
-            <div class="item">
-                <h2 th:text="${item.name}">商品名</h2>
-                <div class="item__image">
-                    <img th:src="${item.imagePath}" th:alt="${item.name}" />
-                </div>
-                <div class="item__box">
-                    <p th:text="${item.minPrice}"></p>
-                    <p th:text="${item.description}"></p>
+        <section class="item">
+            <div class="item__info">
+                <ul class="item__label">
+                    <li class="item__category item__category--large" th:text="${item.largeCategoryName}">大カテゴリ名</li>
+                    <li class="item__category item__category--small" th:text="${item.smallCategoryName}">小カテゴリ名</li>
+                </ul>
+                <h2 class="item__name" th:text="${item.name}">商品名</h2>
+                <div class="item__detail">
+                    <p class="item__min-price">最安価格(税込)：<span th:text="'¥' + ${#numbers.formatInteger(item.minPrice, 3, 'COMMA')}">値段</span></p>
+                    <p class="item__description" th:text="${item.description}"></p>
                 </div>
             </div>
-            <div class="shop-ranking">
-
+            <div class="item__image">
+                <img th:src="${item.imagePath}" th:alt="${item.name}" />
+            </div>
+        </section>
+        <section class="store-item">
+            <div class="store-ranking">
+                <table class="store-ranking-table">
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>価格</th>
+                            <th>在庫</th>
+                            <th>お届け</th>
+                            <th>地域</th>
+                            <th>ショップ/支払い方法</th>
+                            <th>コメント</th>
+                            <th>ショップサイト</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="storeItem: ${storeItems}">
+                            <td th:text="${storeItemStat.count} + 位">順位</td>
+                            <td class="store-ranking-table__price" th:text="'¥' + ${#numbers.formatInteger(storeItem.price, 3, 'COMMA')}">価格</td>
+                            <td th:text="${storeItem.stock}">在庫</td>
+                            <td th:text="${storeItem.shippingPeriod}">お届け</td>
+                            <td th:text="${storeItem.area}">地域</td>
+                            <td>
+                                <p class="store-ranking-table__store-name"><a target="_blank" th:href="${storeItem.storeUrl}" th:text="${storeItem.storeName}">ショップ</a></p>
+                                <ul class="store-ranking-table__pay">
+                                    <li th:if="${storeItem.bankPay}" class="store-ranking-table__pay-label">銀行振込</li>
+                                    <li th:if="${storeItem.conveniencePay}" class="store-ranking-table__pay-label">コンビニ</li>
+                                    <li th:if="${storeItem.creditPay}" class="store-ranking-table__pay-label">カード</li>
+                                </ul>
+                            </td>
+                            <td th:text="${storeItem.comment}">コメント</td>
+                            <td><a class="store-ranking-table__shop-link" target="_blank" th:href="${storeItem.url}">売り場へ</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </div>
